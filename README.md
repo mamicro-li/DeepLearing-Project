@@ -27,4 +27,5 @@ python3 -m pip install -r requirements.txt
 python3 run_UI.py
 ```
 
-![Sample image](https://github.com/lihongwei970/DeepLearing-Project/blob/main/Sample.png)
+
+<img src="https://github.com/lihongwei970/DeepLearing-Project/blob/main/Sample.png" width="100" height="100">

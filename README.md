@@ -9,7 +9,7 @@
 - [model.py](https://github.com/lihongwei970/DeepLearing-Project/model.py): Face verification model.
 - [align.py](https://github.com/lihongwei970/DeepLearing-Project/align.py): Functions that used to align face based on landmarks.
 - [PredictionModels.py](https://github.com/lihongwei970/DeepLearing-Project/PredictionModels.py): Prediction models generator.
-- [run_UI.py](https://github.com/lihongwei970/DeepLearing-Project/run_UI.py): main function that runs the GUI.
+- [run_UI.py](https://github.com/lihongwei970/DeepLearing-Project/run_UI.py): Main function that runs the GUI.
 
 ## Requirements:
 ```

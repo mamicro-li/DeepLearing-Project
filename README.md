@@ -1,7 +1,7 @@
 # DeepLearing-Project
 
 ## What is in this repository?
--This site was built using [GitHub Pages](https://pages.github.com/lihongwei970/DeepLearing-Project/run_UI.py).
+-[run_UI.py](https://github.com/lihongwei970/DeepLearing-Project/run_UI.py): main function that runs the GUI
 ## Requirements:
 ```
 python3.9 (configured tkinter)

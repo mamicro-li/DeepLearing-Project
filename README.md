@@ -28,4 +28,4 @@ python3 run_UI.py
 ```
 
 
-<img src="https://github.com/lihongwei970/DeepLearing-Project/blob/main/Sample.png" width="100" height="100">
+<img src="https://github.com/lihongwei970/DeepLearing-Project/blob/main/Sample.png" width="600" height="300">

@@ -27,5 +27,10 @@ python3 -m pip install -r requirements.txt
 python3 run_UI.py
 ```
 
-
+## User instruction
+- Display buttons: Corresponding prediction display switch.
+- Name field: User's name for face verification training.
+- Train: Use current camera feed as an image input to the face database.
+- Upload: Manually upload face image to the face database.
+- Reset: Reset the face verification database.
 <img src="https://github.com/lihongwei970/DeepLearing-Project/blob/main/Sample.png" width="600" height="300">

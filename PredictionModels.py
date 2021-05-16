@@ -39,7 +39,7 @@ class FaceVerify:
             target_vec = face_id_dict[id][0]/face_id_dict[id][1]
             dist_list.append(self.distance(face_vec, target_vec))
         
-        if(min(dist_list)>0.55): 
+        if(min(dist_list)>0.58): 
             return 'Unknown'
         else:
             closest_id = np.argmin(dist_list)

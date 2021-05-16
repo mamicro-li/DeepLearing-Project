@@ -92,15 +92,16 @@ def reset_dict():
     '''
     global face_id_dict 
     try:
-        bb, img = faceid_model.align_image(cv2.imread('images/lhw.JPG'))
-        img = (img / 255.).astype(np.float32)
-        face_vec = faceid_model.nn4_small2_pretrained.predict(np.expand_dims(img, axis=0))[0]
-        face_id_dict = {'hw':[face_vec,1]}
+        # bb, img = faceid_model.align_image(cv2.imread('images/lhw.JPG'))
+        # img = (img / 255.).astype(np.float32)
+        # face_vec = faceid_model.nn4_small2_pretrained.predict(np.expand_dims(img, axis=0))[0]
+        # face_id_dict = {'hw':[face_vec,1]}
 
         bb, img = faceid_model.align_image(cv2.imread('images/Donald_Trump.jpeg'))
         img = (img / 255.).astype(np.float32)
         face_vec = faceid_model.nn4_small2_pretrained.predict(np.expand_dims(img, axis=0))[0]
-        face_id_dict['trump'] = [face_vec,1]
+        face_id_dict = {'trump':[face_vec,1]}
+        #face_id_dict['trump'] = [face_vec,1]
         
         file = open('dict_file','wb')
         pickle.dump(face_id_dict, file)
@@ -209,7 +210,8 @@ if __name__ == '__main__':
     emotion_model = Models.build_complex_emotion_model()
     bounding_box = cv2.CascadeClassifier('haarcascade_frontalface_default.xml') #/usr/local/lib/python3.9/site-packages/cv2/data
     #emotion_dict = {0: "Angry", 1: "Disgusted", 2: "Fearful", 3: "Happy", 4: "Neutral", 5: "Sad", 6: "Surprised"}
-    emotion_dict = {0: "Negative", 1: "Neutral", 2: "Positive"}
+    #emotion_dict = {0: "Negative", 1: "Neutral", 2: "Positive"}
+    emotion_dict = {0: "Happy", 1: "Sad", 2: "Neutral"}
     faceid_model = FaceVerify()
     file = open('dict_file','rb')
     face_id_dict = pickle.load(file)

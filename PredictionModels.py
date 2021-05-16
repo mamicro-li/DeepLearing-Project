@@ -13,7 +13,7 @@ class FaceVerify:
         '''
         self.nn4_small2_pretrained = create_model()
         self.nn4_small2_pretrained.load_weights('weights/nn4.small2.v1.h5')
-        self.alignment = AlignDlib('models/landmarks.dat')
+        self.alignment = AlignDlib('landmarks/landmarks.dat')
 
     def align_image(self,img):
         #Preprocess image, align the face
@@ -47,15 +47,14 @@ class FaceVerify:
 
 ############
 class Models:
-    @staticmethod
-    def build_complex_age_net():
+    def build_basic_model():
         """
         This is a Deep Convolutional Neural Network (DCNN). For generalization purpose I used dropouts in regular intervals.
         I used `ELU` as the activation because it avoids dying relu problem but also performed well as compared to LeakyRelu
         atleast in this case. `he_normal` kernel initializer is used as it suits ELU. BatchNormalization is also used for better
         results.
         """
-        model = Sequential(name='DCNN')
+        model = Sequential(name='Age_CNN')
 
         model.add(Conv2D(filters=64,kernel_size=(5,5),input_shape=(48, 48, 1),activation='elu',padding='same',kernel_initializer='he_normal',name='conv2d_1'))
         model.add(BatchNormalization(name='batchnorm_1'))
@@ -87,13 +86,21 @@ class Models:
         model.add(BatchNormalization(name='batchnorm_7'))
         model.add(Dropout(0.6, name='dropout_4'))
         
+        
+        return model
+    @staticmethod
+    def build_complex_age_model():
+        model = Models.build_basic_model()
         model.add(Dense(1,activation='relu',name='out_layer'))
-
-        #model.compile(loss='mean_squared_error',optimizer='adam',metrics=['mae'])
-        #net.summary()
         model.load_weights('weights/age_complex_model.h5')
         return model
+    @staticmethod
+    def build_complex_emotion_model():
+        model = Models.build_basic_model()
+        model.add(Dense(3,activation='softmax',name='out_layer'))
+        model.load_weights('weights/emotion_complex_model.h5')
 
+        return model
     @staticmethod
     def biuld_emotion_model():
         emotion_model = Sequential([
@@ -109,7 +116,7 @@ class Models:
             Flatten(),
             Dense(1024, activation='relu'),
             Dropout(0.5),
-            Dense(7, activation='softmax')
+            Dense(3, activation='softmax')
         ])
         emotion_model.load_weights('weights/emotion_model.h5')
         return emotion_model

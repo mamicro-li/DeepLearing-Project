@@ -205,11 +205,11 @@ if __name__ == '__main__':
         download_landmarks(dst_file)
 
     #Create models
-    age_model = Models.build_complex_age_net()
-    emotion_model = Models.biuld_emotion_model()
+    age_model = Models.build_complex_age_model()
+    emotion_model = Models.build_complex_emotion_model()
     bounding_box = cv2.CascadeClassifier('haarcascade_frontalface_default.xml') #/usr/local/lib/python3.9/site-packages/cv2/data
-    emotion_dict = {0: "Angry", 1: "Disgusted", 2: "Fearful", 3: "Happy", 4: "Neutral", 5: "Sad", 6: "Surprised"}
-
+    #emotion_dict = {0: "Angry", 1: "Disgusted", 2: "Fearful", 3: "Happy", 4: "Neutral", 5: "Sad", 6: "Surprised"}
+    emotion_dict = {0: "Negative", 1: "Neutral", 2: "Positive"}
     faceid_model = FaceVerify()
     file = open('dict_file','rb')
     face_id_dict = pickle.load(file)

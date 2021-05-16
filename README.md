@@ -6,6 +6,8 @@
 - [images](https://github.com/lihongwei970/DeepLearing-Project/blob/main/images): Images used to initialize face verification database.
 - [haarcascade_frontalface_default.xml](https://github.com/lihongwei970/DeepLearing-Project/blob/main/haarcascade_frontalface_default.xml): Pretrained frontface detector weights used by cv2.
 - [dict_file](https://github.com/lihongwei970/DeepLearing-Project/blob/main/dict_file): Dictionary variable that stores the face vectors, use `pickle` to load the data.
+- [train_emtion.ipynb](https://github.com/lihongwei970/DeepLearing-Project/blob/main/train_emtion.ipynb): Notebook for emotion model training.
+- [train_age.ipynb](https://github.com/lihongwei970/DeepLearing-Project/blob/main/train_age.ipynb): Notebook for age model training.
 - [model.py](https://github.com/lihongwei970/DeepLearing-Project/blob/main/model.py): Face verification model.
 - [align.py](https://github.com/lihongwei970/DeepLearing-Project/blob/main/align.py): Functions that used to align face based on landmarks.
 - [PredictionModels.py](https://github.com/lihongwei970/DeepLearing-Project/blob/main/PredictionModels.py): Prediction models generator.
@@ -22,6 +24,8 @@ dlib
 ```
 
 ## How to run
+####run training notebook
+`train_emtion.ipynb` and `train_age.ipynb` require to upload `kaggle.json` to obtain dataset.
 ```
 python3 -m pip install -r requirements.txt
 python3 run_UI.py

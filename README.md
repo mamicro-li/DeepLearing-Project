@@ -24,7 +24,8 @@ dlib
 ```
 
 ## How to run
-Notice:`train_emtion.ipynb` and `train_age.ipynb` require to upload `kaggle.json` to obtain dataset.\\
+Notice:`train_emtion.ipynb` and `train_age.ipynb` require to upload `kaggle.json` to obtain dataset.\
+\
 Run main program:
 ```
 python3 -m pip install -r requirements.txt

@@ -4,11 +4,11 @@
 - [models](https://github.com/lihongwei970/DeepLearing-Project/blob/main/models): Landmarks that used by face alignment.
 - [weights](https://github.com/lihongwei970/DeepLearing-Project/blob/main/weights): Pretrained prediction model weights.
 - [images](https://github.com/lihongwei970/DeepLearing-Project/blob/main/images): Images used to initialize face verification database.
+- [training_notebooks/train_emtion.ipynb](https://github.com/lihongwei970/DeepLearing-Project/blob/main/training_notebooks/train_emtion.ipynb): Notebook for emotion model training.
+- [training_notebooks/train_age.ipynb](https://github.com/lihongwei970/DeepLearing-Project/blob/main/training_notebooks/train_age.ipynb): Notebook for age model training.
 - [kaggle.json](https://github.com/lihongwei970/DeepLearing-Project/blob/main/kaggle.json): Key to retrieve Kaggle dataset.
 - [haarcascade_frontalface_default.xml](https://github.com/lihongwei970/DeepLearing-Project/blob/main/haarcascade_frontalface_default.xml): Pretrained frontface detector weights used by cv2.
 - [dict_file](https://github.com/lihongwei970/DeepLearing-Project/blob/main/dict_file): Dictionary variable that stores the face vectors, use `pickle` to load the data.
-- [train_emtion.ipynb](https://github.com/lihongwei970/DeepLearing-Project/blob/main/train_emtion.ipynb): Notebook for emotion model training.
-- [train_age.ipynb](https://github.com/lihongwei970/DeepLearing-Project/blob/main/train_age.ipynb): Notebook for age model training.
 - [model.py](https://github.com/lihongwei970/DeepLearing-Project/blob/main/model.py): Face verification model.
 - [align.py](https://github.com/lihongwei970/DeepLearing-Project/blob/main/align.py): Functions that used to align face based on landmarks.
 - [PredictionModels.py](https://github.com/lihongwei970/DeepLearing-Project/blob/main/PredictionModels.py): Prediction models generator.

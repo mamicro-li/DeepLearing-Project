@@ -2,6 +2,9 @@ import numpy as np
 import cv2
 import pickle
 import imutils
+import bz2
+import os
+from urllib.request import urlopen
 from imutils.video import WebcamVideoStream
 
 import matplotlib.pyplot as plt
@@ -9,9 +12,18 @@ from tkinter import * #brew install python-tk
 from tkinter import messagebox
 from tkinter.filedialog import askopenfilename
 from PIL import Image, ImageTk
-from imutils.video import WebcamVideoStream
 
 from PredictionModels import FaceVerify, Models
+
+def download_landmarks(dst_file):
+    url = 'http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2'
+    decompressor = bz2.BZ2Decompressor()
+    
+    with urlopen(url) as src, open(dst_file, 'wb') as dst:
+        data = src.read(1024)
+        while len(data) > 0:
+            dst.write(decompressor.decompress(data))
+            data = src.read(1024)
 
 # Define switch function
 def age_switch():
@@ -184,6 +196,14 @@ def show_frame():
     lmain.place(x=200)
 
 if __name__ == '__main__':
+    dst_dir = 'landmarks'
+    dst_file = os.path.join(dst_dir, 'landmarks.dat')
+
+    if not os.path.exists(dst_file):
+        os.makedirs(dst_dir)
+        print("Downloading landmarks...")
+        download_landmarks(dst_file)
+
     #Create models
     age_model = Models.build_complex_age_net()
     emotion_model = Models.biuld_emotion_model()
@@ -201,7 +221,7 @@ if __name__ == '__main__':
     lmain = Label(root)
     lmain.pack()
     root.title("Face Recognition")
-    root.geometry("1025x500")
+    root.geometry("1025x480")
 
     #Define labels
     age_label = Label(root, text = "Display age")

@@ -24,8 +24,8 @@ dlib
 ```
 
 ## How to run
-####run training notebook
-`train_emtion.ipynb` and `train_age.ipynb` require to upload `kaggle.json` to obtain dataset.
+Notice:`train_emtion.ipynb` and `train_age.ipynb` require to upload `kaggle.json` to obtain dataset.
+\n\nRun main program:
 ```
 python3 -m pip install -r requirements.txt
 python3 run_UI.py

@@ -38,6 +38,6 @@ python3 run_UI.py
 - Name field: User's name for face verification training.
 - Train: Use current camera feed as an image input to the face database.
 - Upload: Manually upload face image to the face database.
-- Reset: Reset the face verification database.
-Demo\
+- Reset: Reset the face verification database.\
+###### Demo\
 [![Demo](https://img.youtube.com/vi/0Pk1WW23KXk/0.jpg)](https://www.youtube.com/watch?v=0Pk1WW23KXk)

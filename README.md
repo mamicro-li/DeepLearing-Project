@@ -40,3 +40,4 @@ python3 run_UI.py
 - Upload: Manually upload face image to the face database.
 - Reset: Reset the face verification database.
 <img src="https://github.com/lihongwei970/DeepLearing-Project/blob/main/Sample.png" width="600" height="300">
+[![IMAGE ALT TEXT](https://www.youtube.com/watch?v=0Pk1WW23KXk/0.jpg)](https://www.youtube.com/watch?v=0Pk1WW23KXk "Video Title")
